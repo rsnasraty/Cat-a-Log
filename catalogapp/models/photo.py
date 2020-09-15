@@ -7,18 +7,12 @@ class Photo(models.Model):
     caption = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     imagePath = models.CharField(max_length=255)
-   
+    created_at = models.DateTimeField(auto_now_add=True)
     
 
     class Meta:
-        verbose_name = ("")
-        verbose_name_plural = ("s")
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("_detail", kwargs={"pk": self.pk})
+        verbose_name = ("photo")
+        verbose_name_plural = ("photos")
 
 
-created_at = models.DateTimeField(auto_now_add=True)
+
