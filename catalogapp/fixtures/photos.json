@@ -1,0 +1,20 @@
+[
+    {
+    "model": "catalogapp.order",
+    "pk": 1,
+    "fields": {
+        "created_at": "2020-08-24",
+        "pet_id": 1,
+        "payment_type_id": 1
+    }
+    },
+    {
+    "model": "catalogapp.order",
+    "pk": 2,
+    "fields": {
+        "created_at": "2020-08-24",
+        "pet_id": 2,
+        "payment_type_id": null
+    }
+    }
+]

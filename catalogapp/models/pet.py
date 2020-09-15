@@ -1,13 +1,10 @@
 from django.db import models
-from safedelete.models import SafeDeleteModel
-from safedelete.models import SOFT_DELETE
 from django.dispatch import receiver
-from .owner import Owner
+from django.contrib.auth.models import User
 
 
 class Pet(SafeDeleteModel):
-    _safedelete_policy = SOFT_DELETE
-    owner = models.ForeignKey(Owner,on_delete=models.DO_NOTHING)
-    name = models.CharField(max_length=50)
-    favorite_toy = models.CharField(max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    favorite_toy = models.CharField(max_length=25)
     birthday = models.models.DateField(("Birthday"), auto_now=False, auto_now_add=False)

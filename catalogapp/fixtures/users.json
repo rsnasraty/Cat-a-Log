@@ -5,8 +5,8 @@
     "fields": {
         "first_name":"Dj",
         "last_name": "Woolite",
-        "email": "dj@washedfm.com"
+        "email": "dj@washedfm.com",
+        "username": "djWoolite"
     }
     }
-  ]
-  
+]
