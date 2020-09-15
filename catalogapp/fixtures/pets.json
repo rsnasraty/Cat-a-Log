@@ -1,0 +1,22 @@
+[
+    {
+    "model": "catalogapp.pet",
+    "pk": 1,
+    "fields": {
+      "owner_id": 1,
+      "name": "Luna",
+      "favorite_toy": "White fuzzy mouse",
+      "birthday": "01/01/2020"
+    }
+},
+    {
+        "model": "catalogapp.pet",
+        "pk": 1,
+        "fields": {
+          "owner_id": 1,
+          "name": "Artemis",
+          "favorite_toy": "Da Bird",
+          "birthday": "02/28/2020"
+        }
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "first_name":"Dj",
+        "last_name": "Woolite",
+        "email": "dj@washedfm.com"
+    }
+    }
+  ]
+  

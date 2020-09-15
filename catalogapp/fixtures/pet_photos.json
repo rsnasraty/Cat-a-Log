@@ -1,0 +1,31 @@
+[
+    {
+      "model": "ecommerceapi.product",
+      "pk": 1,
+      "fields": {
+        "title": "Elder Wand",
+        "customer_id": 1,
+        "price": 15.99,
+        "description": "Make magic happen",
+        "quantity": 1,
+        "location": "Hogwarts",
+        "imagePath": "https://i.pinimg.com/originals/f0/92/e3/f092e37c9c6ae89127ef5ec43234b1d0.jpg",
+        "createdAt": "2020-08-24"
+      }
+    },
+    {
+      "model": "ecommerceapi.product",
+      "pk": 2,
+      "fields": {
+        "title": "Taoster",
+        "customer_id": 1,
+        "price": 15.99,
+        "description": "Make taoster happen",
+        "quantity": 1,
+        "location": "Little Whinging",
+        "imagePath": "https://cdn.drawception.com/images/panels/2018/3-14/RTrZtWemd9-10.png",
+        "createdAt": "2020-08-24"
+      }
+    }
+  ]
+  
