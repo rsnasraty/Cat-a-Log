@@ -9,3 +9,4 @@ class Pet(models.Model):
     name = models.CharField(max_length=20)
     favorite_toy = models.CharField(max_length=25)
     birthday = models.DateField(("Birthday"), auto_now=False, auto_now_add=False)
+
