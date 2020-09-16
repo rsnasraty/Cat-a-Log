@@ -3,7 +3,7 @@ from .pet import Pet
 
 class Photo(models.Model):
     pet = models.ForeignKey(
-        Pet, on_delete=models.DO_NOTHING)
+    Pet, on_delete=models.DO_NOTHING)
     caption = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
     imagePath = models.CharField(max_length=255)
