@@ -8,16 +8,16 @@
   <body>
     <p>Hello</p>
     <ol>
-    {% for pet in pets %}
+    {% for pet in pets%}
         <p>{{ pet.name }}</p>
         <p>{{ pet.favorite_toy }}</p>
         <p>{{ pet.birthday }}</p>
-        {% for photo in pet.photos %}
-        <p>{{ photo.caption }}</p>
-        <p>{{ photo.description }}</p>
-        <p>{{ photo.imagePath }}</p>
-        <p>{{ photo.created_at }}</p>
-        {% endfor %}
+        {% for pet_photo in pet.craycrayphotos.all%}
+        <p>{{ photop.photo.caption }}</p>
+       <p>{{ pet.photo.description }}</p>
+        <p>{{ pet.photo.imagePath }}</p>
+        <p>{{ pet.photo.created_at }}</p> 
+        {% endfor %} 
     {% endfor %}
     </ol>
   </body>
