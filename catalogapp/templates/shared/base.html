@@ -17,7 +17,7 @@
     <nav id="site-nav">
         <ol class="navList">
             <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">My Pets</a></li>
-            <li class="navList__route"><a href="{% url 'catalogapp:pet_photos' %}">My Photos</a></li>
+            {% comment %} <li class="navList__route"><a href="{% url 'catalogapp:my_photos' %}">My Photos</a></li> {% endcomment %}
             <li class="navList__route"><a href="{% url 'catalogapp:register' %}">Register</a></li>
         </ol>
     </nav>
