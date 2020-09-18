@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Catalog</title>
+    <title>Library</title>
 
     <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
 
@@ -16,9 +16,9 @@
 
     <nav id="site-nav">
         <ol class="navList">
-            <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">My Pets</a></li>
-            {% comment %} <li class="navList__route"><a href="{% url 'catalogapp:my_photos' %}">My Photos</a></li> {% endcomment %}
             <li class="navList__route"><a href="{% url 'catalogapp:register' %}">Register</a></li>
+            {% comment %} <li class="navList__route"><a href="{% url 'catalogapp:pet' %}">My Photos</a></li>
+            <li class="navList__route"><a href="{% url 'catalogapp:gallery' %}">Gallery</a></li> {% endcomment %}
         </ol>
     </nav>
 
