@@ -6,6 +6,5 @@ from catalogapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('catalogapp.urls')),
-    path('register/', register_user, name="register")
+    path('', include('catalogapp.urls'))
 ]

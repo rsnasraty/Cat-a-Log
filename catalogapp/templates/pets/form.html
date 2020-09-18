@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pet Form</title>
+</head>
+<body>
+    <h1>Add Your Pets to Get Started!</h1>
+
+
+    <form action="{% url 'catalogapp:register' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <label for="Pet Name">Pet Name: </label>
+        <input id="pet_name" type="text" name="pet_name">
+    </fieldset>
+    <fieldset>
+        <label for="pet_birthday">Pet's Birthday: </label>
+        <input id="pet_birthday" type="text" name="pet_birthday">
+    </fieldset>
+    <fieldset>
+        <label for="favorite_toy">Pet's Favorite Toy: </label>
+        <input id="favorite_toy" type="text" name="favorite_toy">
+    </fieldset>
+    </fieldset>
+
+    <input type="submit" value="Add It" />
+    </form>
+</body>
+</html>
