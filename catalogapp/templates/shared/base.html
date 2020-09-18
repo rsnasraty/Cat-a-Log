@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Catalog</title>
+
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
+
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <nav id="site-nav">
+        <ol class="navList">
+            <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">My Pets</a></li>
+            <li class="navList__route"><a href="{% url 'catalogapp:pet_photos' %}">My Photos</a></li>
+            <li class="navList__route"><a href="{% url 'catalogapp:register' %}">Register</a></li>
+        </ol>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+
+</html>

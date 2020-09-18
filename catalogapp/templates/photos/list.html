@@ -1,0 +1,19 @@
+  
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>My Photos</h1>
+
+
+    <ol>
+    {% for photo in all_photos %}
+        <li>
+
+            {{ photos.id}}
+            ({{ photos.petId})
+            ({{ photos.caption}})
+            ({{ photos.description}})
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}

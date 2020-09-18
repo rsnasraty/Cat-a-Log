@@ -1,0 +1,25 @@
+  
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>Pets</h1>
+
+
+    <ol>
+    {% for pet in all_pets %}
+        <li>
+
+            {{ pet.name }}
+            ({{ pet.birthday}})
+            ({{ pet.favorite_toy}})
+            <ul>
+            {% for pet in pet_photos.photos %}
+                <li>{{ pet_photos.id }}</li>
+                 <li>{{ pet_photos.caption}}</li>
+                  <li>{{ pet_photos.description }}</li>
+            {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
