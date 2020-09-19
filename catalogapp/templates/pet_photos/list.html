@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+  </head>
+  <body>
+    <p>Hello</p>
+    <ol>
+    {% for pet in pets%}
+        <p>{{ pet.name }}</p>
+        <p>{{ pet.favorite_toy }}</p>
+        <p>{{ pet.birthday }}</p>
+        {% for pet_photo in pet.photos.all%}
+        <p>{{ photop.photo.caption }}</p>
+       <p>{{ pet.photo.description }}</p>
+        <p>{{ pet.photo.imagePath }}</p>
+        <p>{{ pet.photo.created_at }}</p> 
+        {% endfor %} 
+    {% endfor %}
+    </ol>
+  </body>
+</html>

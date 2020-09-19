@@ -1,0 +1,27 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Pets</title>
+  </head>
+  <body>
+    <h1>{{ pet.name}}</h1>
+    <h2>{{ pet.birthday }}</h2>
+
+    <div>{{ pet.favorite_toy }}</div>
+    <div>Registered by {{ book.librarian.user.first_name }} {{ book.librarian.user.last_name }}</div>
+
+    <form action="{% url 'libraryapp:book' book.id %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="actual_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+
+    <form action="{% url 'libraryapp:book_edit_form' book.id %}" method="GET">
+      {% csrf_token %}
+      <button>Edit</button>
+    </form>
+
+  </body>
+</html> {% endcomment %}

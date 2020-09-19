@@ -1,0 +1,23 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/pets.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <h1>Pets</h1>
+
+    <a href="{% url 'catalogapp:pet_form' %}">Add a Pet</a>
+
+    <ol class="pets">
+    {% for pet in all_pets %}
+        <li class="pet">
+            <a class="pet__name" href="{% url 'catalogapp:pet' pet.id %}"> {{ pet.name }}</a>
+            <div class="pet__info">
+                {{pet.birthday}} {{pet.favorite_toy}}
+            </div>
+        </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
