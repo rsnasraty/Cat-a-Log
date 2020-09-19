@@ -18,8 +18,8 @@ def register_user(request):
         # create a new user using django's built in craziness. create a user is a method in django.
         new_user = User.objects.create_user(
             username=request.POST['username'],
-            email=request.POST['email'],
             password=request.POST['password'],
+            email=request.POST['email'],
             first_name=request.POST['first_name'],
             last_name=request.POST['last_name']
         )

@@ -1,6 +1,7 @@
 from django.urls import path, include
-from . import views
-from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
+from catalogapp.views import * 
 
 app_name = 'catalogapp'
 
@@ -8,7 +9,8 @@ app_name = 'catalogapp'
 # first argument defines what the path looks like, second argument is what function should I run/what should show up that has the logic to show the info on the page, third argument is the name aka how you reference it in the future
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
-    path('gallery', views.gallery, name='gallery'),
+    path('gallery/', gallery, name='gallery'),
+    path('pets/', pet_list, name='pets'),
     path('register/',register_user, name="register"),
-    path('pets/', pet_list, name="pets")
+    path('logout/',logout_user, name='logout'),
 ]
