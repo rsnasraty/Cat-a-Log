@@ -1,9 +1,12 @@
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls import url
+from .views import *
+from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from catalogapp import views
 from catalogapp.views.pets.list import pet_list
-from .views import login_user, home, logout_user, gallery, register_user, pets
+# from .views import login_user, home, logout_user, gallery, register_user, pets
 
 app_name = 'catalogapp'
 

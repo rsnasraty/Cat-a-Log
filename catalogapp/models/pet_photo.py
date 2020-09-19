@@ -6,7 +6,7 @@ class PetPhoto(models.Model):
     pet = models.ForeignKey(
         Pet, on_delete=models.DO_NOTHING)
     photo = models.ForeignKey(
-        Photo, on_delete=models.DO_NOTHING, related_name="craycrayphotos")
+        Photo, on_delete=models.DO_NOTHING, related_name="gallery")
     class Meta:
         verbose_name = ("pet photo")
         verbose_name_plural = ("pets photos")
