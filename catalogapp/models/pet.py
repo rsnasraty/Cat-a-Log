@@ -8,7 +8,7 @@ from django.db.models.signals import post_save
 class Pet(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
-    favorite_toy = models.CharField(max_length=25)
+    favorite_toy = models.CharField(max_length=20)
     birthday = models.DateField(("Birthday"), auto_now=False, auto_now_add=False)
 
 @receiver(post_save, sender=User)
