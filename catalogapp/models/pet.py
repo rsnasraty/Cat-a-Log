@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 
-# blueprint to show what the thing will look like
+# blueprint to show what the thing will look like, based off librarian ORM model
 
 class Pet(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
