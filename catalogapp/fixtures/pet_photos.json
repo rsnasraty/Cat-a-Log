@@ -1,6 +1,6 @@
 [
     {
-    "model": "catalogapp.product",
+    "model": "catalogapp.PetPhoto",
     "pk": 1,
     "fields": {
         "pet_id": 1,
@@ -8,7 +8,7 @@
     }
     },
     {
-    "model": "catalogapp.product",
+    "model": "catalogapp.PetPhoto",
     "pk": 2,
     "fields": {
         "pet_id": 2,
