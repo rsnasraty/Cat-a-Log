@@ -1,6 +1,23 @@
-<h2>Login</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>Log-In</h1>
+
+    <form action="{% url 'catalogapp:login' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <label for="username">Username: </label>
+            <input id="username" type="text" name="username" >
+        </fieldset>
+
+        <fieldset>
+            <label for="password">Password: </label>
+            <input id="password" type="password" name="password" >
+        </fieldset>
+
+
+        <input type="submit" value="Login" />
+
+    </form>
+
+{% endblock %}
