@@ -11,7 +11,7 @@ from catalogapp.models import Photo, Pet
 def create_photo(cursor, row):
     _row = sqlite3.Row(cursor, row)
 
-    Photo = Photo()
+    photo = Photo()
     photo.id = _row["photo_id"]
     photo.description = _row["description"]
     photo.caption = _row["caption"]

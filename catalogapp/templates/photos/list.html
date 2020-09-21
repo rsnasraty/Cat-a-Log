@@ -1,19 +1,28 @@
-  
 {% extends 'shared/base.html' %}
 
 {% block content %}
-    <h1>My Photos</h1>
+    <h1>Photos</h1>
 
 
     <ol>
     {% for photo in all_photos %}
         <li>
-
-            {{ photos.id}}
-            ({{ photos.petId})
-            ({{ photos.caption}})
-            ({{ photos.description}})
+            {{ photo.caption }}
+            ({{ photo.description }})
+            <ul>
+            {% comment %}
+              book_set.all is how we "reverse lookup" the books that belong to a library. Behaves much like _embed from json-server
+            {% endcomment %}
+            {% for pet in photo.pet_set.all %}
+                <li>{{ pet.name }}</li>
+            {% endfor %}
+            </ul>
         </li>
     {% endfor %}
     </ol>
 {% endblock %}
+
+
+
+
+

@@ -2,6 +2,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import *
+from catalogapp.views.photos.list import photo_list
 
 app_name = 'catalogapp'
 
@@ -15,5 +16,6 @@ urlpatterns = [
     path('register/',register_user, name="register"),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('photos/', photo_list, name='photos'),
     
 ]
