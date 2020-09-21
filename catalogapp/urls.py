@@ -1,12 +1,7 @@
 from django.urls import path, include
 from django.conf import settings
-from django.conf.urls import url
-from .views import *
-from django.views.generic import TemplateView
 from django.conf.urls.static import static
-from catalogapp import views
-from catalogapp.views.pets.list import pet_list
-# from .views import login_user, home, logout_user, gallery, register_user, pets
+from .views import *
 
 app_name = 'catalogapp'
 
@@ -15,7 +10,7 @@ app_name = 'catalogapp'
 urlpatterns = [
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
-    # path('gallery/', gallery, name='gallery'),
+    path('gallery/', gallery, name='gallery'),
     path('pets/', pet_list, name='pets'),
     path('register/',register_user, name="register"),
     path('login/', login_user, name='login'),
