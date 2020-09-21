@@ -25,7 +25,8 @@ venv.bak/
 .DS_store 
 .catenv
 catenv
-
+catalogapp/views/connection.py
+catalog.session.sql
 # Django stuff:
 *.log
 local_settings.py

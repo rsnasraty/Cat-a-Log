@@ -1,24 +1,25 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Gallery</title>
-  </head>
-  <body>
-    <p>Hello</p>
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>Pet Photos</h1>
+
+
     <ol>
-    {% for pet in pets%}
-        <p>{{ pet.name }}</p>
-        <p>{{ pet.favorite_toy }}</p>
-        <p>{{ pet.birthday }}</p>
-        {% for pet_photo in pet.photos.all%}
-        <p>{{ photop.photo.caption }}</p>
-       <p>{{ pet.photo.description }}</p>
-        <p>{{ pet.photo.imagePath }}</p>
-        <p>{{ pet.photo.created_at }}</p> 
-        {% endfor %} 
+    {% for pet in all_pets %}
+        <li>
+            {{ pet.name }}
+            ({{ pet.birthday }})
+             ({{ pet.favorite_toy }})
+            <ul>
+            {% comment %}
+              book_set.all is how we "reverse lookup" the books that belong to a library. Behaves much like _embed from json-server
+            {% endcomment %}
+            {% for photo in pet_photos.photo_set.all %}
+                <li>{{ photo.description }}</li>
+                <li>{{ photo.caption }}</li>
+            {% endfor %}
+            </ul>
+        </li>
     {% endfor %}
     </ol>
-  </body>
-</html>
+{% endblock %}
