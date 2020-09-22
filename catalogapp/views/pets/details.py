@@ -9,12 +9,11 @@ from ..connection import Connection
 @login_required
 def pet_details(request, pet_id):
     if request.method == 'GET':
-        # pet = get_pet(pet_id)
         pet = Pet.objects.get(pk=pet_id)
 
         template = 'pets/detail.html'
         context = {
-            'pet': pet
+            'pet_details': pet_details
         }
 
         return render(request, template, context)
