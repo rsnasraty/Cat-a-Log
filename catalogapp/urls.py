@@ -18,9 +18,9 @@ urlpatterns = [
     path('pets/', pet_list, name='pets'),
     path('register/',register_user, name="register"),
     path('photos/', photo_list, name='photos'),
-    path('pets/', pet_form, name='pet_form'),
     path('pets/<int:pet_id>/', pet_details, name='pet'),
     path('pets/<int:pet_id>/form/', pet_edit_form, name='pet_edit_form'),
+    path('pets/addnewpet', pet_form, name='pet_form'),
     
     
 ]

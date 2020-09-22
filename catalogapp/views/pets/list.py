@@ -18,6 +18,3 @@ def pet_list(request):
         
 
         return render(request, template, context)
-
-
-        return redirect(reverse('catalogapp:pets'))

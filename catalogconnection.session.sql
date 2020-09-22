@@ -1,0 +1,1 @@
+DELETE FROM catalogapp_pet WHERE id=3;

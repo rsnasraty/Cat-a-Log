@@ -15,7 +15,7 @@
         <li class="pet">
             <a class="pet__name" href="{% url 'catalogapp:pet' pet.id %}"> {{ pet.name }}</a>
             <div class="pet__info">
-                {{pet.birthday}} {{pet.favorite_toy}}
+                {{pet.favorite_toy}}
             </div>
         </li>
     {% endfor %}
