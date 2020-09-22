@@ -2,6 +2,7 @@ import sqlite3
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from catalogapp.models import Pet
+from ..helpers.get_pet import get_pet
 from ..connection import Connection
 
 def get_pets():

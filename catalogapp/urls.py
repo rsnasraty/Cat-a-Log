@@ -21,8 +21,6 @@ urlpatterns = [
     path('pets/', pet_form, name='pet_form'),
     path('pets/<int:pet_id>/', pet_details, name='pet'),
     path('pets/<int:pet_id>/form/', pet_edit_form, name='pet_edit_form'),
-    # path('accounts/', login, name='login'),
-    # path('accounts/', logout, name='logout')
     
     
 ]
