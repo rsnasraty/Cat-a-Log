@@ -12,6 +12,7 @@ def get_pets():
 
         db_cursor.execute("""
         select
+            
             l.id,
             l.name,
             l.birthday,
