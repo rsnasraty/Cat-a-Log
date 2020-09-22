@@ -3,14 +3,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Pets</title>
+    <title>My Photos</title>
   </head>
   <body>
-    <h1>{{ pet.name}}</h1>
-    <h2>{{ pet.birthday }}</h2>
-    <div>{{ pet.favorite_toy }}</div>
-
-    <form action="{% url 'catalogapp:pet_edit_form' pet.id %}" method="GET">
+    <h1>{{ photo.caption}}</h1>
+    <h2>{{ photo.description }}</h2>
+    <div>{{ photo.imagePath }}</div>
+    <div>{{ photo.created_at }}</div>
+    <form action="{% url 'catalogapp:photo_edit_form' photo.id %}" method="GET">
       {% csrf_token %}
       <button>Edit</button>
     </form>

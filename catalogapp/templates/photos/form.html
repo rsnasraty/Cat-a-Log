@@ -6,23 +6,25 @@
     <title>Catalog</title>
 </head>
 <body>
-    <h1>Add Another Pet</h1>
+    <h1>Add Another Photo</h1>
 
-
-    <form action="{% url 'catalogapp:pet_form' %}" method="post">
+    <form action="{% url 'catalogapp:photo_form' %}" method="post">
     {% csrf_token %}
     <fieldset>
-        <label for="Pet Name">Pet Name: </label>
-        <input id="pet_name" type="text" name="pet_name">
+        <label for="Photo Caption">Caption: </label>
+        <input id="photo_caption" type="text" name="photo_caption">
     </fieldset>
     <fieldset>
-        <label for="pet_birthday">Pet's Birthday: </label>
-        <input id="pet_birthday" type="text" name="pet_birthday">
+        <label for="photo_description">Description: </label>
+        <input id="photo_description" type="text" name="photo_description">
     </fieldset>
     <fieldset>
-        <label for="favorite_toy">Pet's Favorite Toy: </label>
-        <input id="favorite_toy" type="text" name="favorite_toy">
+        <label for="imagePath">Image</label>
+        <input id="imagePath" type="file" name="imagePath">
     </fieldset>
+    <fieldset>
+        <label for="created_at">Date Created: </label>
+        <input id="created_at" type="date" name="created_at">
     </fieldset>
 
     <input type="submit" value="Add It" />
