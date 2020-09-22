@@ -9,7 +9,7 @@ from catalogapp.models import Pet
 @login_required
 def pet_list(request):
     if request.method == 'GET':
-        pet_list = pet_list.objects.all()
+        pet_list = Pet.objects.all()
 
         template = 'pets/list.html'
         context = {

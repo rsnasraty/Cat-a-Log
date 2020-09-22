@@ -17,6 +17,7 @@ urlpatterns = [
     path('pets/', pet_list, name='pets'),
     path('register/',register_user, name="register"),
     path('photos/', photo_list, name='photos'),
+    path('pets/', pet_form, name='pet_form')
     # path('accounts/', login, name='login'),
     # path('accounts/', logout, name='logout')
     

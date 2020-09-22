@@ -1,4 +1,4 @@
-{% comment %} {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +6,10 @@
     <title>Catalog</title>
 </head>
 <body>
-    <h1>Add Your Pets to Get Started!</h1>
+    <h1>Add Another Pet</h1>
 
 
-    <form action="{% url 'catalogapp:register' %}" method="post">
+    <form action="{% url 'catalogapp:pet_form' %}" method="post">
     {% csrf_token %}
     <fieldset>
         <label for="Pet Name">Pet Name: </label>
@@ -28,4 +28,4 @@
     <input type="submit" value="Add It" />
     </form>
 </body>
-</html> {% endcomment %}
+</html> 
