@@ -6,6 +6,6 @@ from .pets.list import pet_list
 from .pets.form import pet_form
 from .pets.details import pet_details
 from .gallery.list import gallery
-from .photos.list import create_photo
+from .photos.list import photo_list
 from .photos.form import get_photos
 from .photos.details import photo_details

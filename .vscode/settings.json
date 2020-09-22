@@ -1,4 +1,11 @@
 {
     "python.pythonPath": "catenv/bin/python",
-    "sqltools.connections": []
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "catalogapp",
+            "database": "${workspaceFolder:catalog}/db.sqlite3"
+        }
+    ]
 }
