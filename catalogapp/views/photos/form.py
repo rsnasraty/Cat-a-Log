@@ -24,7 +24,8 @@ def photo_form(request):
             caption=request.POST['caption'],
             description=request.POST['description'],
             imagePath=request.POST['imagePath'],
-            created_at=request.POST['created_at']
+            created_at=request.POST['created_at'],
+            pet_id=request.POST['pet_id']
         )
 
         return redirect(reverse("catalogapp:photos"))

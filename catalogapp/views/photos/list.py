@@ -11,13 +11,12 @@ from django.contrib.auth.models import User
 @login_required
 def photo_list(request):
     if request.method == 'GET':
-        photos = Photo.objects.filter(user=request.user)
+        photos = Photo.objects.all()
 
         template = 'photos/list.html'
         context = {
             'photos': photos
         }
-        #Have the user on request, objects is a django property, get is a method on the objects property to get one thing back from that table
         
         
 
