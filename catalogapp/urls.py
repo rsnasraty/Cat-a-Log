@@ -5,6 +5,7 @@ from .views import *
 from catalogapp.views.photos.list import photo_list
 from .views.auth.home import home
 from django.contrib.auth import logout, login
+from catalogapp.views.pets.form import pet_edit_form
 
 app_name = 'catalogapp'
 
@@ -18,7 +19,8 @@ urlpatterns = [
     path('register/',register_user, name="register"),
     path('photos/', photo_list, name='photos'),
     path('pets/', pet_form, name='pet_form'),
-    path('pets/', pet_details, name='pet_details')
+    path('pets/<int:pet_id>/', pet_details, name='pet'),
+    path('pets/<int:pet_id>/form/', pet_edit_form, name='pet_edit_form'),
     # path('accounts/', login, name='login'),
     # path('accounts/', logout, name='logout')
     

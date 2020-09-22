@@ -32,3 +32,16 @@ def pet_form(request, pet_id):
         }
 
         return render(request, template, context)
+    
+@login_required
+def pet_edit_form(request, pet_id):
+
+    if request.method == 'GET':
+        pet = get_pets(pet_id)
+        
+        template = 'pets/form.html'
+        context = {
+            'pet': pet,
+        }
+
+        return render(request, template, context)
