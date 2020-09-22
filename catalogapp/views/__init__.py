@@ -3,5 +3,9 @@ from .auth.login import login
 from .auth.logout import logout_user
 from .auth.home import home
 from .pets.list import pet_list
+from .pets.form import pet_form
+from .pets.details import pet_details
 from .gallery.list import gallery
 from .photos.list import create_photo
+from .photos.form import get_photos
+from .photos.details import photo_details

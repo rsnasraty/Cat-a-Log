@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Cat-A-Log</title>
+    <title>Catalog</title>
 
     <link rel="stylesheet" href="{% static 'styles/base.css' %}" />
 
@@ -17,8 +17,8 @@
     <nav id="site-nav">
         <ol class="navList">
             <li class="navList__route"><a href="{% url 'catalogapp:register' %}">Register</a></li>
-            <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">My Photos</a></li>
             <li class="navList__route"><a href="{% url 'catalogapp:gallery' %}">Gallery</a></li> 
+            <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">Pets</a></li> 
             <li class="navList__route"><a href="{% url 'catalogapp:login' %}">Log-In</a></li> 
             <li class="navList__route"><a href="{% url 'catalogapp:logout' %}">Log-Out</a></li> 
         </ol>
@@ -29,4 +29,4 @@
 
 </body>
 
-</html>
+</html> 
