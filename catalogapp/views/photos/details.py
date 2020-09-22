@@ -33,9 +33,10 @@ def photo_details(request, photo_id):
             photo_to_update = Photo.objects.get(pk=photo_id)
 
             # Second, set the updated values on the instance object from the db with the form values
-            photo_to_update.name = form_data["name"]
-            photo_to_update.favorite_toy = form_data["favorite_toy"]
-            photo_to_update.birthday = form_data["birthday"]
+            photo_to_update.caption = form_data["caption"]
+            photo_to_update.description = form_data["description"]
+            photo_to_update.imagePath= form_data["imagePath"]
+            photo_to_update.created_at= form_data["created_at"]
 
             #Third, save the newly updated object back to the db
             # The photo_to_update object has its id on it, since we pulled it out of the db, so when we call save() Django knows to update, not create a new row. Awesome!
