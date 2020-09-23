@@ -9,6 +9,7 @@ from .views.auth.home import home
 from django.contrib.auth import logout, login
 from catalogapp.views.pets.form import pet_edit_form
 from catalogapp.views.photos.form import photo_edit_form, photo_form
+from catalogapp.views.kitten.kitten_image_view import success, kitten_image_view
 
 app_name = 'catalogapp'
 
@@ -27,7 +28,12 @@ urlpatterns = [
     path('photos/<int:photo_id>/', photo_details, name='photo'),
     path('photos/<int:photo_id>/form/', photo_edit_form, name='photo_edit_form'),
     path('photos/addnewphoto', photo_form, name='photo_form'),
-    path('logout/', logout_user, name='logout'),
-    
+    path('logout', logout_user, name='logout'),
+    path('image_upload/', kitten_image_view, name = 'image_upload'), 
+    path('image_upload/success', success, name = 'success'),
     
 ]
+
+if settings.DEBUG: 
+        urlpatterns += static(settings.MEDIA_URL, 
+                            document_root=settings.MEDIA_ROOT)

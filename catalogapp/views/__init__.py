@@ -9,3 +9,5 @@ from .gallery.list import gallery
 from .photos.list import photo_list
 from .photos.form import photo_form
 from .photos.details import photo_details
+from .kitten import kitten_image_view
+from .kitten.kitten_image_view import success
