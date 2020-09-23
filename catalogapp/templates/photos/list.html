@@ -10,9 +10,6 @@
             {{ photo.caption }}
             ({{ photo.description }})
             <ul>
-            {% comment %}
-              book_set.all is how we "reverse lookup" the books that belong to a library. Behaves much like _embed from json-server
-            {% endcomment %}
             {% for pet in photo.pet_set.all %}
                 <li>{{ pet.name }}</li>
             {% endfor %}

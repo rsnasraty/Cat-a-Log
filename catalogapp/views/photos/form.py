@@ -1,45 +1,40 @@
 import sqlite3
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from catalogapp.models import Photo
 # from ..helpers.get_photo import get_photo
 from ..connection import Connection
 
-def get_photos():
-    with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = sqlite3.Row
-        db_cursor = conn.cursor()
-
-        db_cursor.execute("""
-        select
-            
-            l.id,
-            l.name,
-            l.birthday,
-            l.favorite_toy
-        from catalogapp_photos l
-        """)
-
-        return db_cursor.fetchall()
 
 @login_required
-def photo_form(request, photo_id):
+def photo_form(request):
 
     if request.method == 'GET':
-        photo = get_photos(photo_id)
 
-        template = 'photo/form.html'
+        template = 'photos/form.html'
         context = {
-            'photo': photo,
         }
 
         return render(request, template, context)
+    
+    elif request.method == 'POST':
+        new_photo = Photo.objects.create(
+            user=request.user,
+            caption=request.POST['caption'],
+            description=request.POST['description'],
+            imagePath=request.POST['imagePath'],
+            created_at=request.POST['created_at'],
+            pet_id=request.POST['pet_id']
+        )
+
+        return redirect(reverse("catalogapp:photos"))
     
 @login_required
 def photo_edit_form(request, photo_id):
 
     if request.method == 'GET':
-        photo = get_photos(photo_id)
+        photo = Photo.objects.get(pk=photo_id)
         
         template = 'photos/form.html'
         context = {
