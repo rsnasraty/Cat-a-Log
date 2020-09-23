@@ -3,9 +3,11 @@
 {% block content %}
     <h1>Gallery</h1>
 
+    <a href="{% url 'catalogapp:photo_form' %}">Add Photo</a>
 
     <ol>
     {% for photo in all_photos %}
+        <img src='{{ photo.imagePath }}'></img>
         <li>
             {{ photo.caption }}
             ({{ photo.description }})

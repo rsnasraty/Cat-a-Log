@@ -27,7 +27,22 @@
 
     {% block content %}
     {% endblock %}
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
+    <script type="text/javascript">  
+    var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'cat-a-log', 
+    uploadPreset: 'image_upload'}, (error, result) => { 
+        if (!error && result && result.event === "success") { 
+            document.getElementById('imagePath').value = result.info.secure_url
+        }
+    }
+    )
+
+    document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+    }, false);
+    </script>
 </body>
 
 </html> 
