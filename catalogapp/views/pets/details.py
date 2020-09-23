@@ -33,9 +33,9 @@ def pet_details(request, pet_id):
             pet_to_update = Pet.objects.get(pk=pet_id)
 
             # Second, set the updated values on the instance object from the db with the form values
-            pet_to_update.name = form_data["name"]
-            pet_to_update.favorite_toy = form_data["favorite_toy"]
-            pet_to_update.birthday = form_data["birthday"]
+            pet_to_update.name = form_data["pet_name"]
+            pet_to_update.favorite_toy = form_data["pet_favorite_toy"]
+            pet_to_update.birthday = form_data["pet_birthday"]
 
             #Third, save the newly updated object back to the db
             # The pet_to_update object has its id on it, since we pulled it out of the db, so when we call save() Django knows to update, not create a new row. Awesome!
