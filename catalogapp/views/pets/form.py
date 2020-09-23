@@ -9,9 +9,10 @@ from ..connection import Connection
 
 
 @login_required
+
 def pet_form(request):
 
-#making a new pet, just need to show the form so you don't need to get a pe
+#making a new pet, just need to show the form so you don't need to get a pet
 # need the GET in order to define what the method is to get the URL
     if request.method == 'GET':
 
@@ -38,9 +39,19 @@ def pet_edit_form(request, pet_id):
     if request.method == 'GET':
         pet = Pet.objects.get(pk=pet_id)
         
-        template = 'pets/form.html'
+        template = 'pets/edit_form.html'
         context = {
             'pet': pet,
         }
 
         return render(request, template, context)
+    
+    if request.method == 'POST':
+        pet = Pet.objects.get(pk=pet_id)
+        
+        template = 'pets/edit_form.html'
+        context = {
+            'pet': pet,
+        }
+
+        return redirect(reverse("catalogapp:pet",args=[pet_id]))

@@ -13,7 +13,7 @@ def pet_details(request, pet_id):
 
         template = 'pets/detail.html'
         context = {
-            'pet_details': pet_details
+            'pet': pet
         }
 
         return render(request, template, context)
@@ -28,7 +28,7 @@ def pet_details(request, pet_id):
             and form_data["actual_method"] == "PUT"
         ):
 
-            # First, get the istance from the db, then update its properties
+            # First, get the instance from the db, then update its properties
 
             pet_to_update = Pet.objects.get(pk=pet_id)
 

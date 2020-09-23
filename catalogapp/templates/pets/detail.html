@@ -10,7 +10,7 @@
     <h2>{{ pet.birthday }}</h2>
     <div>{{ pet.favorite_toy }}</div>
 
-    <form action="{% url 'catalogapp:pet_edit_form' pet.id %}" method="GET">
+    <form action="{% url 'catalogapp:edit_form' pet.id %}" method="GET">
       {% csrf_token %}
       <button>Edit</button>
     </form>

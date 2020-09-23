@@ -6,27 +6,27 @@
     <title>Catalog</title>
 </head>
 <body>
-    <h1>Add A Pet</h1>
+    <h1>Edit A Pet</h1>
 
 
-    <form action="{% url 'catalogapp:pet_form' %}" method="post">
+    <form action="{% url 'catalogapp:edit_form' pet.id %}" method="POST">
     {% csrf_token %}
     <fieldset>
         <label for="Pet Name">Pet Name: </label>
-        <input id="pet_name" type="text" name="pet_name" >
+        <input id="pet_name" type="text" name="pet_name" value="{{pet.name}}" >
     </fieldset>
     <fieldset>
         <label for="pet_birthday">Pet's Birthday: </label>
-        <input id="pet_birthday" type="text" name="pet_birthday" >
+        <input id="pet_birthday" type="text" name="pet_birthday" value="{{pet.birthday}}" >
     </fieldset>
     <fieldset>
         <label for="pet_favorite_toy">Pet's Favorite Toy: </label>
-        <input id="pet_favorite_toy" type="text" name="pet_favorite_toy"
+        <input id="pet_favorite_toy" type="text" name="pet_favorite_toy" value="{{pet.favorite_toy}}"
         >
     </fieldset>
     </fieldset>
 
-    <input type="submit" value="Add Pet!" />
+    <input type="submit" value="Update Pet!" />
     </form>
 </body>
 </html> 
