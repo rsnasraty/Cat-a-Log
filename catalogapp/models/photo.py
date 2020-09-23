@@ -1,7 +1,10 @@
 from django.db import models
 from .pet import Pet
+from django.contrib.auth.models import User
+
 
 class Photo(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     pet = models.ForeignKey(
     Pet, on_delete=models.DO_NOTHING)
     caption = models.CharField(max_length=50)

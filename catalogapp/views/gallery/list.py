@@ -8,9 +8,9 @@ from ..connection import Connection
 def gallery(request):
     if request.method == "GET":
 
-        all_photos = Photo.objects.all()
+        all_photos = Photo.objects.filter(user=request.user)
 
-        template_name = 'photos/list.html'
+        template_name = 'gallery/list.html'
 
         context = {
             'all_photos': all_photos
