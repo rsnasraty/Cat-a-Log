@@ -2,7 +2,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import *
+from catalogapp.views.gallery.list import gallery
 from catalogapp.views.photos.list import photo_list
+from catalogapp.views.auth.logout import logout_user
 from .views.auth.home import home
 from django.contrib.auth import logout, login
 from catalogapp.views.pets.form import pet_edit_form
@@ -25,6 +27,7 @@ urlpatterns = [
     path('photos/<int:photo_id>/', photo_details, name='photo'),
     path('photos/<int:photo_id>/form/', photo_edit_form, name='photo_edit_form'),
     path('photos/addnewphoto', photo_form, name='photo_form'),
+    path('logout/', logout_user, name='logout'),
     
     
 ]
