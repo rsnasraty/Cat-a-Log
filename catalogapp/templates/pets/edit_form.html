@@ -9,7 +9,7 @@
     <h1>Edit A Pet</h1>
 
 
-    <form action="{% url 'catalogapp:edit_form' pet.id %}" method="POST">
+    <form action="{% url 'catalogapp:pet' pet.id %}" method="POST">
     {% csrf_token %}
     <fieldset>
         <label for="Pet Name">Pet Name: </label>
@@ -25,7 +25,7 @@
         >
     </fieldset>
     </fieldset>
-
+<input type="hidden" name="actual_method" value="PUT">
     <input type="submit" value="Update Pet!" />
     </form>
 </body>
