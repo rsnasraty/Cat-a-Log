@@ -45,3 +45,13 @@ def pet_edit_form(request, pet_id):
         }
 
         return render(request, template, context)
+    
+    if request.method == 'POST':
+        pet = Pet.objects.get(pk=pet_id)
+        
+        template = 'pets/edit_form.html'
+        context = {
+            'pet': pet,
+        }
+
+        return redirect(reverse("catalogapp:pet",args=[pet_id]))
