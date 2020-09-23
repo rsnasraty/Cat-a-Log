@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.db.models.signals import post_save
 
 # blueprint to show what the thing will look like, based off librarian ORM model
-
+#each property represents a column in the db
 class Pet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
