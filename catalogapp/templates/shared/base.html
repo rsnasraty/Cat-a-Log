@@ -24,24 +24,33 @@
             <li class="navList__route"><a href="{% url 'catalogapp:logout' %}">Log-Out</a></li> 
         </ol>
     </nav>
-
+{% comment %} block and endblock signify where you are extending the base template and interjecting other content into the block {% endcomment %}
     {% block content %}
     {% endblock %}
+    {% comment %} grabs cloudinary widget src link  {% endcomment %}
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    {% comment %} Put javascript code for the uploadwidget in here. script let us put js code in an html file 
+    -passed in my cloudinary acct name and then my uploadPreset all from the cloudinary widget tutorial 
+    -if says if we get the result back we will grab the imagePath hidden input field in the form.html 
+    -result.info.secure_url is the link to the photo on cloudinary (we are only getting the specific property secure_url and putting that into the value of the hidden input in the form.html for imagePath)
 
+    
+    {% endcomment %}
     <script type="text/javascript">  
     var myWidget = cloudinary.createUploadWidget({
     cloudName: 'cat-a-log', 
     uploadPreset: 'image_upload'}, (error, result) => { 
+        //get the element (fieldset) that contains the id(imagePath)
+        //using dot notation to get .value property then get the result response back and then use dot notation to get secure_url property on info that comes back (part of whole response object)
         if (!error && result && result.event === "success") { 
             document.getElementById('imagePath').value = result.info.secure_url
         }
     }
     )
-
+//this event listener on the id upload widget, when clicked, will then open my Widget. 
     document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
-    }, false);
+    });
     </script>
 </body>
 

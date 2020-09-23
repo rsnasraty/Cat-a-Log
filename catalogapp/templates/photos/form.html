@@ -12,6 +12,8 @@
     <label for="photo_description">Description: </label>
     <input id="photo_description" type="text" name="photo_description">
 </fieldset>
+{% comment %} on 19 input id imagePath is hidden with a blank value, we make a call to a server and it responds. we put that 'secure url property' in the response that comes back.
+- 'secure url property' in the value when we upload the photo. {% endcomment %}
 <fieldset>
     <label for="imagePath">Image</label>
     <input type='button' id="upload_widget" class="cloudinary-button" value='Upload image'></button>
