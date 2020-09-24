@@ -3,8 +3,8 @@ from .pet import Pet
 from django.contrib.auth.models import User
 
 
-class Photo(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class Photo(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Photo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

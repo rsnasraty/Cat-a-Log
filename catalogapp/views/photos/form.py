@@ -8,6 +8,7 @@ from ..connection import Connection
 
 
 @login_required
+
 def photo_form(request):
 
     if request.method == 'GET':
@@ -23,8 +24,8 @@ def photo_form(request):
             user=request.user,
             caption=request.POST['photo_caption'],
             description=request.POST['photo_description'],
-            imagePath=request.POST['imagePath'],
-            created_at=request.POST['created_at'],
+            imagePath=request.POST['photo_imagePath'],
+            created_at=request.POST['photo_created_at'],
         )
 
         return redirect(reverse("catalogapp:photos"))
@@ -35,9 +36,19 @@ def photo_edit_form(request, photo_id):
     if request.method == 'GET':
         photo = Photo.objects.get(pk=photo_id)
         
-        template = 'photos/form.html'
+        template = 'photos/edit_form.html'
         context = {
             'photo': photo,
         }
 
         return render(request, template, context)
+    
+    if request.method == 'POST':
+        photo = Photo.objects.get(pk=photo_id)
+        
+        template = 'photos/edit_form.html'
+        context = {
+            'photo': photo,
+        }
+
+        return redirect(reverse("catalogapp:photo",args=[photo_id]))

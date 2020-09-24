@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 @login_required
 def photo_list(request):
     if request.method == 'GET':
-        photos = Photo.objects.all()
+        photos = Photo.objects.filter(user=request.user)
 
         template = 'photos/list.html'
         context = {

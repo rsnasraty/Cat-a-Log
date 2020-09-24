@@ -12,7 +12,8 @@ from ..connection import Connection
 
 def pet_form(request):
 
-#making a new pet, just need to show the form so you don't need to get a pet
+#making a new pet
+#  just need to SHOW the form so you don't need to get a pet
 # need the GET in order to define what the method is to get the URL
     if request.method == 'GET':
 
