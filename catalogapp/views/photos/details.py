@@ -46,3 +46,5 @@ def photo_details(request, photo_id):
             photo_to_update.save()
 
             return redirect(reverse('catalogapp:photos'))
+
+    

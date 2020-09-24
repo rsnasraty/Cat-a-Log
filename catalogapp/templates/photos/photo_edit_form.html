@@ -9,7 +9,7 @@
     <h1>Edit A Photo</h1>
 
 {% comment %} action is what occurs when you SUBMIT the form {% endcomment %}
-    <form action="{% url 'catalogapp:photos' photo.id %}" method="POST">
+    <form action="{% url 'catalogapp:photo_edit_form' photo_details.id %}" method="POST">
     {% csrf_token %}
     <fieldset>
         <label for="Photo Caption">Caption: </label>
@@ -20,7 +20,7 @@
         <input id="photo_description" type="text" name="photo_description" value="{{photo_details.description}}" >
     </fieldset>
     </fieldset>
-<input type="hidden" name="actual_method" value="PUT">
+    <input type="hidden" name="actual_method" value="PUT">
     <input type="submit" value="Update Photo!" />
     </form>
 </body>
