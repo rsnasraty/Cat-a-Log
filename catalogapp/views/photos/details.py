@@ -33,8 +33,8 @@ def photo_details(request, photo_id):
             photo_to_update = Photo.objects.get(pk=photo_id)
 
             # Second, set the updated values on the instance object from the db with the form values
-            photo_to_update.caption = form_data["caption"]
-            photo_to_update.description = form_data["description"]
+            photo_to_update.caption = form_data["photo_caption"]
+            photo_to_update.description = form_data["photo_description"]
             photo_to_update.imagePath= form_data["imagePath"]
             photo_to_update.created_at= form_data["created_at"]
 

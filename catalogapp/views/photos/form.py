@@ -8,6 +8,7 @@ from ..connection import Connection
 
 
 @login_required
+
 def photo_form(request):
 
     if request.method == 'GET':
@@ -41,3 +42,13 @@ def photo_edit_form(request, photo_id):
         }
 
         return render(request, template, context)
+    
+    if request.method == 'POST':
+        photo = Photo.objects.get(pk=photo_id)
+        
+        template = 'photos/photo_edit_form.html'
+        context = {
+            'photo': photo,
+        }
+
+        return redirect(reverse("catalogapp:photos",args=[photo_id]))
