@@ -10,10 +10,11 @@
     <h1>{{ photo.caption}}</h1>
     <h2>{{ photo.description }}</h2>
     {% comment %} <div>{{ photo.imagePath }}</div>
-    <div>{{ photo.created_at }}</div> {% endcomment %}
+    <div>{{ photo.created_at }}</div>  {% endcomment %}
     <form action="{% url 'catalogapp:photo_edit_form' photo.id %}" method="GET">
       {% csrf_token %}
       <button>Edit</button>
+
     </form>
 
   </body>

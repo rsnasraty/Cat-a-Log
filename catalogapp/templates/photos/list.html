@@ -8,17 +8,19 @@
     <ol>
     {% for photo in all_photos %}
     {% comment %} put the img src aka the url of the live cloudinary image link uploaded to cloudinary when a user clicks upload {% endcomment %}
+    <ul>
         <img src='{{ photo.imagePath }}'></img>
-        <li>
-            {{ photo.caption }}
-            ({{ photo.description }})
-            <ul>
-            {% for pet in photo.pet_set.all %}
-                <li>{{ pet.name }}</li>
+        
+            {% comment %} {{ photo.caption }}
+            ({{ photo.description }}) {% endcomment %}
+            
+            
+{% comment %} word after colon has to match up to name= in urls.py {% endcomment %}
+<li><a class="pet__name" href="{% url 'catalogapp:photos' photo.id %}">{{ photo.caption }}</li></a>
             {% endfor %}
             </ul>
-        </li>
-    {% endfor %}
+        
+
     </ol>
 {% endblock %}
 

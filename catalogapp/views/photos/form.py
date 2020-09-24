@@ -28,15 +28,15 @@ def photo_form(request):
             created_at=request.POST['created_at'],
         )
 
-        return redirect(reverse("catalogapp:gallery"))
+        return redirect(reverse("catalogapp:photos"))
     
 @login_required
 def photo_edit_form(request, photo_id):
-
+#GET brings back that specific photo by its id and stores it under photo_details
     if request.method == 'GET':
         photo_details = Photo.objects.get(pk=photo_id)
         
-        template = 'photos/form.html'
+        template = 'photos/photo_edit_form.html'
         context = {
             'photo_details': photo_details,
         }
@@ -51,4 +51,4 @@ def photo_edit_form(request, photo_id):
             'photo_details': photo_details,
         }
 
-        return redirect(reverse("catalogapp:gallery",args=[photo_id]))
+        return redirect(reverse("catalogapp:photos",args=[photo_id]))

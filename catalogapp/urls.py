@@ -21,7 +21,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('photos/', gallery, name='photos'),
     path('register/',register_user, name="register"),
-    path('photos/<int:photo_id>/', photo_details, name='photo'),
+    path('photos/<int:photo_id>', photo_details, name='photos'),
     path('photos/<int:photo_id>/form/', photo_edit_form, name='photo_edit_form'),
     path('photos/addnewphoto', photo_form, name='photo_form'),
     path('pets/', pet_list, name='pets'),
