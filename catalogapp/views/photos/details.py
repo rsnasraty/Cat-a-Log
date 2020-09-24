@@ -9,13 +9,16 @@ from ..connection import Connection
 @login_required
 def photo_details(request, photo_id):
     if request.method == 'GET':
+        #get one photo and storing that one photo into the photo variable
         photo = Photo.objects.get(pk=photo_id)
 
         template = 'photos/detail.html'
+        
         context = {
-            'photo_details': photo_details
+            #putting information stored in photo above, here
+            'photo': photo
         }
-
+    #return pushes template in detail.html together with context
         return render(request, template, context)
 
 

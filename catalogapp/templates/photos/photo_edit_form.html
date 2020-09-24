@@ -8,16 +8,16 @@
 <body>
     <h1>Edit A Photo</h1>
 
-
-    <form action="{% url 'catalogapp:gallery' photo.id %}" method="POST">
+{% comment %} action is what occurs when you SUBMIT the form {% endcomment %}
+    <form action="{% url 'catalogapp:photos' photo.id %}" method="POST">
     {% csrf_token %}
     <fieldset>
         <label for="Photo Caption">Caption: </label>
-        <input id="photo_caption" type="text" name="photo_caption" value="{{photo.caption}}" >
+        <input id="photo_caption" type="text" name="photo_caption" value="{{photo_details.caption}}" >
     </fieldset>
     <fieldset>
         <label for="photo_description">Description: </label>
-        <input id="photo_description" type="text" name="photo_description" value="{{photo.description}}" >
+        <input id="photo_description" type="text" name="photo_description" value="{{photo_details.description}}" >
     </fieldset>
     </fieldset>
 <input type="hidden" name="actual_method" value="PUT">

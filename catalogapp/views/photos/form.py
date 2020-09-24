@@ -22,9 +22,9 @@ def photo_form(request):
     elif request.method == 'POST':
         new_photo = Photo.objects.create(
             user=request.user,
+            imagePath=request.POST['imagePath'],
             caption=request.POST['photo_caption'],
             description=request.POST['photo_description'],
-            imagePath=request.POST['imagePath'],
             created_at=request.POST['created_at'],
         )
 
@@ -32,23 +32,23 @@ def photo_form(request):
     
 @login_required
 def photo_edit_form(request, photo_id):
-
+#GET brings back that specific photo by its id and stores it under photo_details
     if request.method == 'GET':
-        photo = Photo.objects.get(pk=photo_id)
+        photo_details = Photo.objects.get(pk=photo_id)
         
-        template = 'photos/form.html'
+        template = 'photos/photo_edit_form.html'
         context = {
-            'photo': photo,
+            'photo_details': photo_details,
         }
 
         return render(request, template, context)
     
     if request.method == 'POST':
-        photo = Photo.objects.get(pk=photo_id)
+        photo_details = Photo.objects.get(pk=photo_id)
         
         template = 'photos/photo_edit_form.html'
         context = {
-            'photo': photo,
+            'photo_details': photo_details,
         }
 
         return redirect(reverse("catalogapp:photos",args=[photo_id]))

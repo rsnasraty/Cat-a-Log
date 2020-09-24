@@ -6,13 +6,15 @@
     <title>My Photos</title>
   </head>
   <body>
+{% comment %} first one has to match what context variable is, the first word  {% endcomment %}
     <h1>{{ photo.caption}}</h1>
     <h2>{{ photo.description }}</h2>
-    <div>{{ photo.imagePath }}</div>
-    <div>{{ photo.created_at }}</div>
+    {% comment %} <div>{{ photo.imagePath }}</div>
+    <div>{{ photo.created_at }}</div>  {% endcomment %}
     <form action="{% url 'catalogapp:photo_edit_form' photo.id %}" method="GET">
       {% csrf_token %}
       <button>Edit</button>
+
     </form>
 
   </body>
