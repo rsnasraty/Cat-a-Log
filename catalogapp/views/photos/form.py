@@ -68,12 +68,4 @@ def photo_edit_form(request, photo_id):
 
             return redirect(reverse('catalogapp:photos'))
     
-    # if request.method == 'POST':
-    #     photo_details = Photo.objects.get(pk=photo_id)
-        
-    #     template = 'photos/photo_edit_form.html'
-    #     context = {
-    #         'photo_details': photo_details,
-    #     }
-
-    #     return redirect(reverse("catalogapp:photos",args=[photo_id]))
+  
