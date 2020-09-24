@@ -10,5 +10,3 @@ from .photos.list import photo_list
 from .photos.form import photo_form
 from .pets.form import pet_edit_form
 from .photos.details import photo_details
-from .kitten import kitten_image_view
-from .kitten.kitten_image_view import success
