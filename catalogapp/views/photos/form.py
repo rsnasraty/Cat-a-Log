@@ -34,21 +34,21 @@ def photo_form(request):
 def photo_edit_form(request, photo_id):
 
     if request.method == 'GET':
-        photo = Photo.objects.get(pk=photo_id)
+        photo_details = Photo.objects.get(pk=photo_id)
         
         template = 'photos/form.html'
         context = {
-            'photo': photo,
+            'photo_details': photo_details,
         }
 
         return render(request, template, context)
     
     if request.method == 'POST':
-        photo = Photo.objects.get(pk=photo_id)
+        photo_details = Photo.objects.get(pk=photo_id)
         
         template = 'photos/photo_edit_form.html'
         context = {
-            'photo': photo,
+            'photo_details': photo_details,
         }
 
         return redirect(reverse("catalogapp:gallery",args=[photo_id]))

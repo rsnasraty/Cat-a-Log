@@ -5,8 +5,7 @@ from .auth.home import home
 from .pets.list import pet_list
 from .pets.form import pet_form
 from .pets.details import pet_details
-from .gallery.list import gallery
-from .photos.list import photo_list
+from .photos.list import gallery
 from .photos.form import photo_form
 from .pets.form import pet_edit_form
 from .photos.details import photo_details
