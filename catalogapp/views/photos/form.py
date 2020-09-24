@@ -24,8 +24,8 @@ def photo_form(request):
             user=request.user,
             caption=request.POST['photo_caption'],
             description=request.POST['photo_description'],
-            imagePath=request.POST['photo_imagePath'],
-            created_at=request.POST['photo_created_at'],
+            imagePath=request.POST['imagePath'],
+            created_at=request.POST['created_at'],
         )
 
         return redirect(reverse("catalogapp:photos"))
@@ -36,7 +36,7 @@ def photo_edit_form(request, photo_id):
     if request.method == 'GET':
         photo = Photo.objects.get(pk=photo_id)
         
-        template = 'photos/edit_form.html'
+        template = 'photos/form.html'
         context = {
             'photo': photo,
         }
