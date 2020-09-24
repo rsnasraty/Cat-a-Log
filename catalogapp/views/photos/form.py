@@ -28,7 +28,7 @@ def photo_form(request):
             created_at=request.POST['photo_created_at'],
         )
 
-        return redirect(reverse("catalogapp:photos"))
+        return redirect(reverse("catalogapp:gallery"))
     
 @login_required
 def photo_edit_form(request, photo_id):
@@ -46,9 +46,9 @@ def photo_edit_form(request, photo_id):
     if request.method == 'POST':
         photo = Photo.objects.get(pk=photo_id)
         
-        template = 'photos/edit_form.html'
+        template = 'photos/photo_edit_form.html'
         context = {
             'photo': photo,
         }
 
-        return redirect(reverse("catalogapp:photo",args=[photo_id]))
+        return redirect(reverse("catalogapp:gallery",args=[photo_id]))

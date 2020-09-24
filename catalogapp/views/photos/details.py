@@ -42,4 +42,4 @@ def photo_details(request, photo_id):
             # The photo_to_update object has its id on it, since we pulled it out of the db, so when we call save() Django knows to update, not create a new row. Awesome!
             photo_to_update.save()
 
-            return redirect(reverse('catalogapp:photos'))
+            return redirect(reverse('catalogapp:gallery'))
