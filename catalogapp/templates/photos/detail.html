@@ -14,7 +14,11 @@
     <form action="{% url 'catalogapp:photo_edit_form' photo.id %}" method="GET">
       {% csrf_token %}
       <button>Edit</button>
-
+    </form>
+    <form action="{% url 'catalogapp:photos' photo.id %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="actual_method" value="DELETE">
+      <button>Delete</button>
     </form>
 
   </body>
