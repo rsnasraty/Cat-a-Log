@@ -22,13 +22,13 @@ def photo_form(request):
     elif request.method == 'POST':
         new_photo = Photo.objects.create(
             user=request.user,
+            imagePath=request.POST['imagePath'],
             caption=request.POST['photo_caption'],
             description=request.POST['photo_description'],
-            imagePath=request.POST['imagePath'],
             created_at=request.POST['created_at'],
         )
 
-        return redirect(reverse("catalogapp:photos"))
+        return redirect(reverse("catalogapp:gallery"))
     
 @login_required
 def photo_edit_form(request, photo_id):
@@ -51,4 +51,4 @@ def photo_edit_form(request, photo_id):
             'photo': photo,
         }
 
-        return redirect(reverse("catalogapp:photos",args=[photo_id]))
+        return redirect(reverse("catalogapp:gallery",args=[photo_id]))

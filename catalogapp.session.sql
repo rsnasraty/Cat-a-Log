@@ -1,1 +1,1 @@
-DELETE FROM catalogapp_photo WHERE id=4;
+DELETE FROM catalogapp_photo WHERE id=7;
