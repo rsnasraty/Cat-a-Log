@@ -4,7 +4,7 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "catalogapp",
+            "name": "catalog",
             "database": "${workspaceFolder:catalog}/db.sqlite3"
         }
     ]
