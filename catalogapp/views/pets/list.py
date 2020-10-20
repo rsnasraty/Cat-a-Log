@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 def pet_list(request):
     if request.method == 'GET':
         pets = Pet.objects.filter(user=request.user)
+    
 
         template = 'pets/list.html'
         context = {
