@@ -1,6 +1,9 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
+{% else %}
+{% endif %}
     <h1>Gallery</h1>
 
     <a href="{% url 'catalogapp:photo_form' %}">Add Photo</a>

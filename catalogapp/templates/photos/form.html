@@ -1,9 +1,17 @@
 {% extends 'shared/base.html' %}
 {% block content %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
 <h1>Add Another Photo</h1>
 
-<form action="{% url 'catalogapp:photo_form' %}" method="post">
+<form action="{% url 'catalogapp:photo_form' %}" method="post" class="form">
 {% csrf_token %}
+{% bootstrap_form form %}
+{% buttons %}
 <fieldset>
     <label for="Photo Caption">Caption: </label>
     <input id="photo_caption" type="text" name="photo_caption">
@@ -24,7 +32,7 @@
     <input id="created_at" type="date" name="created_at">
 </fieldset>
 
-
-<input type="submit" value="Add Photo!" />
+<button type="submit" value="Add Photo!" />
 </form>
+{% endbuttons %}
 {% endblock %}

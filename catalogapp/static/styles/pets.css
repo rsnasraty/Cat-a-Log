@@ -11,6 +11,8 @@
     border: 1px solid gray;
     margin: 1em;
     padding: 1.5em;
+    border-color: #163f68;
+    border-radius: 25px;
   }
   
   .pet__name {
