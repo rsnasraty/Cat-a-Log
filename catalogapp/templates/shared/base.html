@@ -8,8 +8,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Catalog</title>
-     <meta charset="utf-8">
+
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -24,9 +24,13 @@
 
 <body>
 
+
     <nav id="site-nav">
+    <h1>Cat-A-Log</h1>
         <ol class="navList">
-            <li class="navList__route"><a href="{% url 'catalogapp:login' %}">Log-In</a></li> 
+        <img class="logo" src="{% static 'images/logo.png' %}"/>
+            <li class="navList__route">
+            <a href="{% url 'catalogapp:login' %}">Log-In</a></li> 
             <li class="navList__route"><a href="{% url 'catalogapp:register' %}">Register</a></li>
             <li class="navList__route"><a href="{% url 'catalogapp:photos' %}">Gallery</a></li> 
             <li class="navList__route"><a href="{% url 'catalogapp:pets' %}">Pets</a></li> 

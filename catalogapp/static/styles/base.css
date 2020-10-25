@@ -30,3 +30,9 @@ body {
   h1 {
     color:#163f68;
   }
+
+  img #logo {
+    max-width: 500px;
+    height: auto;
+
+  }
