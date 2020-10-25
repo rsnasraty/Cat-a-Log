@@ -8,6 +8,9 @@ from .views.auth.home import home
 from django.contrib.auth import logout, login
 from catalogapp.views.pets.form import pet_edit_form
 from catalogapp.views.photos.form import photo_edit_form, photo_form
+from . import views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 
 app_name = 'catalogapp'
@@ -17,6 +20,7 @@ app_name = 'catalogapp'
 # second argument: is what function should I run/what should show up that has the logic to show the info on the page
 # third argument: is the name aka how you reference it in the future
 urlpatterns = [
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('static/images/favicon.ico'))),
     path('', home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('photos/', gallery, name='photos'),
