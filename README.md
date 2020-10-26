@@ -1,7 +1,9 @@
 # Cat-A-Log
 
 ![Logo](catalogapp/static/images/logo.png)
-Cat-A-Log is a Django Web App where users can upload and log all of their cat photos!
+
+
+## A Django Web App where users can upload and log all of their cat photos!
 
 ## Installation
 
